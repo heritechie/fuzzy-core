@@ -1,0 +1,20 @@
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- background -->
+  <rect width="256" height="256" rx="28" fill="#FFFFFF"/>
+
+  <!-- left point -->
+  <circle cx="88" cy="128" r="10" fill="#0F172A"/>
+
+  <!-- right point -->
+  <circle cx="168" cy="128" r="10" fill="#0F172A"/>
+
+  <!-- fuzzy distance -->
+  <line
+    x1="98" y1="128"
+    x2="158" y2="128"
+    stroke="#0F172A"
+    stroke-width="4"
+    stroke-dasharray="6 6"
+    stroke-linecap="round"
+  />
+</svg>
