@@ -1,0 +1,12 @@
+[
+  {
+    "name": "exact match",
+    "input": ["hello", "hello"],
+    "expected": { "min": 1.0, "max": 1.0 }
+  },
+  {
+    "name": "single typo",
+    "input": ["helo", "hello"],
+    "expected": { "min": 0.7, "max": 0.9 }
+  }
+]
