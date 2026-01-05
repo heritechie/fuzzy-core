@@ -1,0 +1,9 @@
+[package]
+name = "fuzzy-core"
+version = "0.1.0"
+edition = "2021"
+description = "Spec-first fuzzy string core (Rust reference implementation)"
+license = "MIT"
+repository = "https://github.com/heritechie/fuzzy-core"
+
+[dependencies]
