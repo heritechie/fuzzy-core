@@ -1,21 +1,24 @@
 //! Rust reference implementation for fuzzy-core.
-//!
-//! This crate follows the fuzzy-core specification
-//! and serves as the canonical implementation.
 
-/// Temporary placeholder function.
-///
-/// This will be replaced by actual fuzzy logic.
+pub mod normalize;
+
 pub fn version() -> &'static str {
     "0.1.0"
 }
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use super::normalize::normalize;
 
     #[test]
-    fn version_is_not_empty() {
-        assert!(!version().is_empty());
+    fn normalize_basic() {
+        let s = normalize(" Hello,   World! ");
+        assert_eq!(s, "hello world");
+    }
+
+    #[test]
+    fn normalize_punctuation() {
+        let s = normalize("foo-bar_baz");
+        assert_eq!(s, "foobarbaz");
     }
 }
