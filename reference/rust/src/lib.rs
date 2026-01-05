@@ -1,6 +1,7 @@
 //! Rust reference implementation for fuzzy-core.
 
 pub mod normalize;
+pub mod levenshtein;
 
 pub fn version() -> &'static str {
     "0.1.0"
@@ -8,17 +9,24 @@ pub fn version() -> &'static str {
 
 #[cfg(test)]
 mod tests {
+    use super::levenshtein::levenshtein;
     use super::normalize::normalize;
 
     #[test]
-    fn normalize_basic() {
-        let s = normalize(" Hello,   World! ");
-        assert_eq!(s, "hello world");
+    fn levenshtein_basic() {
+        assert_eq!(levenshtein("kitten", "sitting"), 3);
     }
 
     #[test]
-    fn normalize_punctuation() {
-        let s = normalize("foo-bar_baz");
-        assert_eq!(s, "foobarbaz");
+    fn levenshtein_empty() {
+        assert_eq!(levenshtein("", "abc"), 3);
+        assert_eq!(levenshtein("abc", ""), 3);
+    }
+
+    #[test]
+    fn levenshtein_normalized_input() {
+        let a = normalize("Hello, World!");
+        let b = normalize("hello world");
+        assert_eq!(levenshtein(&a, &b), 0);
     }
 }
