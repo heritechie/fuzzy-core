@@ -1,3 +1,7 @@
+[build-system]
+requires = ["maturin>=1.4"]
+build-backend = "maturin"
+
 [project]
 name = "fuzzy-core"
 version = "0.1.0"
@@ -7,7 +11,7 @@ requires-python = ">=3.8"
 license = { text = "MIT" }
 
 authors = [
-  { name = "heritechie", email = "heritechie@gmail.com" }
+  { name = "Heritechie" }
 ]
 
 keywords = [
@@ -28,10 +32,12 @@ classifiers = [
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
-  "Programming Language :: Rust",
 ]
 
 [project.urls]
 Homepage = "https://github.com/heritechie/fuzzy-core"
 Repository = "https://github.com/heritechie/fuzzy-core"
 Issues = "https://github.com/heritechie/fuzzy-core/issues"
+
+[tool.maturin]
+module-name = "fuzzy_core"
