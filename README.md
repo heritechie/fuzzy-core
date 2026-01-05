@@ -1,6 +1,18 @@
+<p align="left">
+  <img src="assets/og.png" alt="fuzzy-core" width="1000%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/heritechie/fuzzy-core/actions/workflows/ci.yml/badge.svg" />
+  <img src="https://img.shields.io/badge/rust-stable-orange" />
+  <img src="https://img.shields.io/pypi/v/fuzzy-core" />
+  <img src="https://img.shields.io/pypi/pyversions/fuzzy-core" />
+  <img src="https://img.shields.io/github/license/heritechie/fuzzy-core" />
+</p>
+
 # fuzzy-core
 
-A **spec-first fuzzy string similarity core**, implemented in **Rust** with a **Python binding**.
+**A spec-first fuzzy string similarity core**, implemented in **Rust** with a **Python binding**.
 
 `fuzzy-core` provides a small, deterministic, and explainable fuzzy matching primitive,
 designed to be used as a **building block** for higher-level domain fuzzy systems.

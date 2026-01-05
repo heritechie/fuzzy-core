@@ -1,0 +1,38 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="#0B1220"/>
+
+  <!-- Title -->
+  <text x="120" y="300"
+        font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-size="72"
+        fill="#E5E7EB">
+    fuzzy-core
+  </text>
+
+  <!-- Subtitle -->
+  <text x="120" y="360"
+        font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-size="32"
+        fill="#94A3B8">
+    Spec-first fuzzy string core
+  </text>
+
+  <!-- Footer -->
+  <text x="120" y="420"
+        font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-size="24"
+        fill="#64748B">
+    Rust reference • Python bindings
+  </text>
+
+  <!-- Minimal distance mark (right side) -->
+  <circle cx="980" cy="320" r="6" fill="#E5E7EB"/>
+  <circle cx="1080" cy="320" r="6" fill="#E5E7EB"/>
+  <line x1="990" y1="320" x2="1070" y2="320"
+        stroke="#94A3B8"
+        stroke-width="3"
+        stroke-dasharray="8 6"/>
+</svg>
