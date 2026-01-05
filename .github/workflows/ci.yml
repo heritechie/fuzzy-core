@@ -32,10 +32,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install maturin pytest
 
-      - name: Build Python extension (maturin develop)
+      - name: Build Python extension (wheel)
         working-directory: reference/rust
         run: |
-          maturin develop
+          maturin build --release
+
+      - name: Install built wheel
+        working-directory: reference/rust
+        run: |
+          pip install target/wheels/*.whl
 
       - name: Run Python tests
         working-directory: reference/rust
