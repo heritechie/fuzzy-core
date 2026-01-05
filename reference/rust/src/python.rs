@@ -1,3 +1,5 @@
+#![allow(unsafe_op_in_unsafe_fn)]
+
 use pyo3::prelude::*;
 
 /// Compute fuzzy similarity score between two strings.
