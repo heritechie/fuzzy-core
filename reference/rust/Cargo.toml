@@ -1,6 +1,6 @@
 [package]
 name = "fuzzy-core"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Spec-first fuzzy string core (Rust reference implementation)"
 license = "MIT"
