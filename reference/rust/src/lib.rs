@@ -2,6 +2,7 @@
 
 pub mod normalize;
 pub mod levenshtein;
+pub mod score;
 
 pub fn version() -> &'static str {
     "0.1.0"
@@ -28,5 +29,29 @@ mod tests {
         let a = normalize("Hello, World!");
         let b = normalize("hello world");
         assert_eq!(levenshtein(&a, &b), 0);
+    }
+
+    #[test]
+    fn similarity_basic() {
+        use super::score::similarity;
+
+        let s = similarity("ab", "ac");
+        assert!(s > 0.4 && s < 0.6);
+    }
+
+    #[test]
+    fn similarity_identical() {
+        use super::score::similarity;
+
+        let s = similarity("test", "test");
+        assert_eq!(s, 1.0);
+    }
+
+    #[test]
+    fn similarity_empty() {
+        use super::score::similarity;
+
+        let s = similarity("", "");
+        assert_eq!(s, 1.0);
     }
 }
