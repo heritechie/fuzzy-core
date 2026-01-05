@@ -41,3 +41,28 @@ pub fn levenshtein(a: &str, b: &str) -> usize {
 
     prev[len_b]
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn levenshtein_basic() {
+        assert_eq!(levenshtein("kitten", "sitting"), 3);
+    }
+
+    #[test]
+    fn levenshtein_empty() {
+        assert_eq!(levenshtein("", "abc"), 3);
+        assert_eq!(levenshtein("abc", ""), 3);
+    }
+
+    #[test]
+    fn levenshtein_normalized_input() {
+        use crate::normalize::normalize; // akses normalize()
+
+        let a = normalize("Hello, World!");
+        let b = normalize("hello world");
+        assert_eq!(levenshtein(&a, &b), 0);
+    }
+}

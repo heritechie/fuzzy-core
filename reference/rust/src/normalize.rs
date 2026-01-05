@@ -25,3 +25,13 @@ pub fn normalize(input: &str) -> String {
 
     out.trim().to_string()
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn normalize_basic() {
+        assert_eq!(normalize("Hello  World"), "hello world");
+    }
+}

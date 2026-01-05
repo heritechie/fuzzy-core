@@ -4,53 +4,44 @@ pub mod normalize;
 pub mod levenshtein;
 pub mod score;
 
-pub fn version() -> &'static str {
-    "0.1.0"
+/// Compute fuzzy similarity score between two strings.
+///
+/// This is the **public API** of fuzzy-core.
+///
+/// Behavior:
+/// - input strings are normalized
+/// - Levenshtein distance is computed
+/// - score is normalized to range [0.0, 1.0]
+pub fn similarity(a: &str, b: &str) -> f64 {
+    let na = normalize::normalize(a);
+    let nb = normalize::normalize(b);
+    score::similarity(&na, &nb)
 }
 
 #[cfg(test)]
 mod tests {
-    use super::levenshtein::levenshtein;
-    use super::normalize::normalize;
+    use super::*;
 
     #[test]
-    fn levenshtein_basic() {
-        assert_eq!(levenshtein("kitten", "sitting"), 3);
-    }
-
-    #[test]
-    fn levenshtein_empty() {
-        assert_eq!(levenshtein("", "abc"), 3);
-        assert_eq!(levenshtein("abc", ""), 3);
-    }
-
-    #[test]
-    fn levenshtein_normalized_input() {
-        let a = normalize("Hello, World!");
-        let b = normalize("hello world");
-        assert_eq!(levenshtein(&a, &b), 0);
-    }
-
-    #[test]
-    fn similarity_basic() {
-        use super::score::similarity;
-
-        let s = similarity("ab", "ac");
-        assert!(s > 0.4 && s < 0.6);
-    }
-
-    #[test]
-    fn similarity_identical() {
-        use super::score::similarity;
-
-        let s = similarity("test", "test");
+    fn similarity_identical_strings() {
+        let s = similarity("hello", "hello");
         assert_eq!(s, 1.0);
     }
 
     #[test]
-    fn similarity_empty() {
-        use super::score::similarity;
+    fn similarity_case_insensitive() {
+        let s = similarity("Hello", "hello");
+        assert!(s > 0.99);
+    }
 
+    #[test]
+    fn similarity_with_punctuation() {
+        let s = similarity("Hello, World!", "hello world");
+        assert!(s > 0.9);
+    }
+
+    #[test]
+    fn similarity_empty_strings() {
         let s = similarity("", "");
         assert_eq!(s, 1.0);
     }
