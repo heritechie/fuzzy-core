@@ -1,11 +1,37 @@
-[build-system]
-requires = ["maturin>=1.4"]
-build-backend = "maturin"
-
 [project]
 name = "fuzzy-core"
 version = "0.1.0"
+description = "Spec-first fuzzy string similarity core (Rust + Python)"
+readme = "README_PYPI.md"
 requires-python = ">=3.8"
+license = { text = "MIT" }
 
-[tool.maturin]
-module-name = "fuzzy_core"
+authors = [
+  { name = "heritechie", email = "heritechie@gmail.com" }
+]
+
+keywords = [
+  "fuzzy",
+  "string-matching",
+  "similarity",
+  "levenshtein",
+  "rust",
+]
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Text Processing",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Rust",
+]
+
+[project.urls]
+Homepage = "https://github.com/heritechie/fuzzy-core"
+Repository = "https://github.com/heritechie/fuzzy-core"
+Issues = "https://github.com/heritechie/fuzzy-core/issues"

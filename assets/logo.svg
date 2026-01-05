@@ -1,20 +1,13 @@
-<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-  <!-- background -->
-  <rect width="256" height="256" rx="28" fill="#FFFFFF"/>
+<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- FZZ main mark (tighter block) -->
+  <text
+    x="13"
+    y="62"
+    font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    font-size="72"
+    letter-spacing="-12"
+    fill="#0F172A">
+    FZZ
+  </text>
 
-  <!-- left point -->
-  <circle cx="88" cy="128" r="10" fill="#0F172A"/>
-
-  <!-- right point -->
-  <circle cx="168" cy="128" r="10" fill="#0F172A"/>
-
-  <!-- fuzzy distance -->
-  <line
-    x1="98" y1="128"
-    x2="158" y2="128"
-    stroke="#0F172A"
-    stroke-width="4"
-    stroke-dasharray="6 6"
-    stroke-linecap="round"
-  />
 </svg>
