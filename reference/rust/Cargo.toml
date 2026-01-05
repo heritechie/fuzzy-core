@@ -6,4 +6,8 @@ description = "Spec-first fuzzy string core (Rust reference implementation)"
 license = "MIT"
 repository = "https://github.com/heritechie/fuzzy-core"
 
+[lib]
+crate-type = ["cdylib"]
+
 [dependencies]
+pyo3 = { version = "0.20", features = ["extension-module"] }

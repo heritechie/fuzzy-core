@@ -3,6 +3,7 @@
 pub mod normalize;
 pub mod levenshtein;
 pub mod score;
+mod python;
 
 /// Compute fuzzy similarity score between two strings.
 ///
